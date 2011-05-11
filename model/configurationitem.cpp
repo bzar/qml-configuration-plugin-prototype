@@ -1,5 +1,6 @@
 #include "configurationitem.h"
 #include "configurationplugin.h"
+#include <QDebug>
 
 ConfigurationItem::ConfigurationItem(QObject *parent) :
         QObject(), plugin(0), id(0), type(ConfigurationItem::String), label(""), value()
@@ -45,4 +46,6 @@ void ConfigurationItem::setValue(QVariant const& newValue)
     {
         plugin->set(id, newValue);
     }
+
+    emit valueChanged(newValue);
 }

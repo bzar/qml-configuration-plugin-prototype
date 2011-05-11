@@ -7,8 +7,8 @@ class IntegerConfigurationItem : public ConfigurationItem
 {
     Q_OBJECT
 public:
-    Q_PROPERTY(int      minValue    READ getMinValue)
-    Q_PROPERTY(int      maxValue    READ getMaxValue)
+    Q_PROPERTY(int      minValue    READ getMinValue NOTIFY minValueChanged)
+    Q_PROPERTY(int      maxValue    READ getMaxValue NOTIFY maxValueChanged)
 
     IntegerConfigurationItem(QObject *parent = 0);
     IntegerConfigurationItem(IntegerConfigurationItem const& other);
@@ -18,8 +18,10 @@ public:
     int getMaxValue();
 
 signals:
-
+    void minValueChanged(int newValue);
+    void maxValueChanged(int newValue);
 public slots:
+    void setValue(int newValue);
 
 private:
     int minValue;

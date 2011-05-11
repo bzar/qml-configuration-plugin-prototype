@@ -25,3 +25,7 @@ int IntegerConfigurationItem::getMaxValue()
     return maxValue;
 }
 
+void IntegerConfigurationItem::setValue(int newValue)
+{
+    ConfigurationItem::setValue(newValue);
+}

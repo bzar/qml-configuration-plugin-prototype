@@ -19,7 +19,15 @@ Item {
     }
 
     Rectangle {
-        y: control.configurationItem.value
+        function sliderPosition() {
+            var item = control.configurationItem;
+            var pos = parseInt((dragArea.drag.maximumX - dragArea.drag.minimumX) *
+                               (item.value - item.minValue) /
+                               (item.maxValue - item.minValue));
+            return pos;
+        }
+
+        x: sliderPosition()
         width: 10
         height: 20
         color: "#eee"
@@ -33,6 +41,7 @@ Item {
         anchors.verticalCenter: parent.verticalCenter
 
         MouseArea {
+            id: dragArea
             anchors.fill: parent
             drag {
                 target: parent
@@ -43,7 +52,7 @@ Item {
 
             onPositionChanged: {
                 var item = control.configurationItem;
-                item.value = (item.maxValue - item.minValue) * parent.x / drag.maximumX + item.minValue;
+                item.value = parseInt((item.maxValue - item.minValue) * parent.x / drag.maximumX + item.minValue);
             }
 
         }

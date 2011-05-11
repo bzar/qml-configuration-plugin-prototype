@@ -25,6 +25,8 @@ public:
     Type getType() const;
     QString getLabel() const;
     QVariant getValue() const;
+
+public slots:
     void setValue(QVariant const& newValue);
 
 signals:

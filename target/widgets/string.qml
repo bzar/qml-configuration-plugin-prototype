@@ -21,7 +21,10 @@ Rectangle {
         anchors.verticalCenter: parent.verticalCenter
         text: control.configurationItem.value
         onTextChanged: {
-            control.configurationItem.value = inputField.text;
+            if(control.configurationItem.value != inputField.text)
+            {
+                control.configurationItem.value = inputField.text;
+            }
         }
 
     }

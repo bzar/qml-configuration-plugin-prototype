@@ -1,4 +1,6 @@
 TEMPLATE = subdirs
-SUBDIRS = test
+SUBDIRS = test \
+    kmixvolume
 
 test.subdir = test
+kmixvolume.subdir = kmixvolume
