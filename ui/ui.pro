@@ -15,9 +15,6 @@ OTHER_FILES += \
     main.qml
 
 HEADERS += \
-    configurationplugin.h \
-    configurationmodel.h \
-    configurationitem.h \
     configurationwidget.h \
     configurationview.h
 
