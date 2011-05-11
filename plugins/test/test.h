@@ -3,6 +3,7 @@
 
 #include "configurationplugin.h"
 #include "configurationitem.h"
+#include "integerconfigurationitem.h"
 #include "configurationmodel.h"
 
 #include <QObject>
@@ -19,7 +20,7 @@ public:
 
 private:
     ConfigurationItem booleanItem;
-    ConfigurationItem integerItem;
+    IntegerConfigurationItem integerItem;
     ConfigurationItem stringItem;
 };
 

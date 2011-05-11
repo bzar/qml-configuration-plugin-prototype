@@ -41,7 +41,11 @@ Item {
                 maximumX: 90
             }
 
-            onPositionChanged: control.configurationItem.value = 100 * parent.x / 90
+            onPositionChanged: {
+                var item = control.configurationItem;
+                item.value = (item.maxValue - item.minValue) * parent.x / drag.maximumX + item.minValue;
+            }
+
         }
     }
 }

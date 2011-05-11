@@ -4,7 +4,7 @@
 
 TestConfigurationPlugin::TestConfigurationPlugin() :
     booleanItem(0, ConfigurationItem::Boolean, "Boolean item", this, false),
-    integerItem(1, ConfigurationItem::Integer, "Integer item", this, 100),
+    integerItem(1, "Integer item", this, 50, -200, 200),
     stringItem(2, ConfigurationItem::String, "String item", this, "Hello World!")
 {
 

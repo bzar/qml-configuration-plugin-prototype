@@ -17,9 +17,9 @@ public:
     Q_PROPERTY(QString  label READ getLabel)
     Q_PROPERTY(QVariant value READ getValue WRITE setValue NOTIFY valueChanged)
 
-    ConfigurationItem();
+    ConfigurationItem(QObject *parent = 0);
     ConfigurationItem(ConfigurationItem const& other);
-    ConfigurationItem(int const id, Type const type, QString const& label, ConfigurationPlugin* plugin, QVariant initialValue = QVariant());
+    ConfigurationItem(int const id, Type const type, QString const& label, ConfigurationPlugin* plugin, QVariant initialValue = QVariant(), QObject *parent = 0);
 
     int getId() const;
     Type getType() const;

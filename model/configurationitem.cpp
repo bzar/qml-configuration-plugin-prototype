@@ -1,19 +1,19 @@
 #include "configurationitem.h"
 #include "configurationplugin.h"
 
-ConfigurationItem::ConfigurationItem() :
+ConfigurationItem::ConfigurationItem(QObject *parent) :
         QObject(), plugin(0), id(0), type(ConfigurationItem::String), label(""), value()
 {
 }
 
 ConfigurationItem::ConfigurationItem(ConfigurationItem const& other) :
-        plugin(other.plugin), id(other.id), type(other.type), label(other.label), value(other.value)
+        QObject(), plugin(other.plugin), id(other.id), type(other.type), label(other.label), value(other.value)
 {
 }
 
 ConfigurationItem::ConfigurationItem(int const id, Type const type, QString const& label,
-                                     ConfigurationPlugin* plugin, QVariant initialValue) :
-        plugin(plugin), id(id), type(type), label(label), value(initialValue)
+                                     ConfigurationPlugin* plugin, QVariant initialValue, QObject *parent) :
+        QObject(parent), plugin(plugin), id(id), type(type), label(label), value(initialValue)
 {
 }
 
